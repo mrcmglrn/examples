@@ -1,0 +1,37 @@
+{
+  "name" : "Ethereum",
+  "description": "Ethereum, the main chain",
+  "image" : "https://ipfs.io/ipfs/QmPZWKbkGMbrNwvdwATE8NjfkmsYc3eoBYz1kWjJHod1aC/1.png",
+  "attributes": [
+    {
+      "trait_type": "Security",
+      "value": 9,
+      "max_value": 10
+    },
+    {
+        "trait_type": "Cost",
+        "value": 9,
+        "max_value": 10
+    },
+    {
+        "trait_type": "Usage",
+        "value": 10,
+        "max_value": 10
+    },
+    {
+      "display_type": "boot_number",
+      "trait_type": "Usage",
+      "value": 1
+    },
+    {
+      "display_type": "boot_percentage",
+      "trait_type": "Cost",
+      "value": 10
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Generation",
+      "value": 1
+    }
+  ]
+}

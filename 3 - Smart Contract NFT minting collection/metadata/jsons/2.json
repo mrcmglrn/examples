@@ -1,0 +1,22 @@
+{
+  "name" : "Polygon",
+  "description": "Polygon chain as 2nd layer of Ethereum",
+  "image" : "https://ipfs.io/ipfs/QmPZWKbkGMbrNwvdwATE8NjfkmsYc3eoBYz1kWjJHod1aC/2.png",
+  "attributes": [
+      {
+          "trait_type": "Security",
+          "value": 7,
+          "max_value": 10
+      },
+      {
+          "trait_type": "Cost",
+          "value": 3,
+          "max_value": 10
+      },
+      {
+          "trait_type": "Usage",
+          "value": 8,
+          "max_value": 10
+      }
+  ]
+}
