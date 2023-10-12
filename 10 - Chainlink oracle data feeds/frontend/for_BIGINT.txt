@@ -1,0 +1,21 @@
+Di default i BigInt non funzionano nelle app React.js
+
+I passi da compiere necessari per far funzionare i BigInt sono:
+
+    1) > npm install eslint
+
+    2) > npx eslint --init
+
+    3) follow the instruction make default choice
+
+    4) open file ".eslintrc.json" and remove all data except: PLUGINS and RULES
+
+    5) add 
+
+        "globals": {
+          "BigInt": true
+        },
+
+      to file ".eslintrc.json"
+
+    6) restart app

@@ -1,0 +1,106 @@
+PER GENERARE L'ABI DELLO SMART CONTRACT POSSO UTILIZZARE REMIX.IDE.
+BASTA COMPILARE LO SC E L'ABI APPARE MAGICAMENTE SOTTO SOME FILE DA ESPORTARE
+
+
+*********************************************************************************
+
+
+Quando compili lo Smart Contract da Truffle, questo genera il file .json che contiene l'ABI e molte altre informazioni.
+
+Ad esempio, ogni qualvolta fai il deploy su una generica rete, questo arricchisce il .json con le informazioni necessarie per recuperare lo SC su quella rete (vedi sezione NETWORKS).
+
+
+*********************************************************************************
+
+
+2_data_feed_migration.js (ETH_TEST_SEPOLIA_AGGREGATOR_BTCUSD)
+LINK TOKEN 0x779877A7B0D9E8603169DdbD7836e478b4624789
+========================
+networkId :11155111
+aggregatorAddress: 0x1b44F3514812d835EB1BDB0acB33d3fA3351Ee43
+
+   Deploying 'DataFeed'
+   --------------------
+   > transaction hash:    0x4fb89ee201ae96cd566712abdfbb828870dad9c16b93b336c7bfdbb956348a61
+   > Blocks: 1            Seconds: 20
+   > contract address:    0x36d690B5894A84008CC0c3DDeeA173fA61e2E342
+   > block number:        4456134
+   > block timestamp:     1696849440
+   > account:             0xa5bF3C96AA9816A1EB5Bd0e5D2561947293894B4
+   > balance:             0.514344089021618751
+   > gas used:            337404 (0x525fc)
+   > gas price:           400.691419666 gwei
+   > value sent:          0 ETH
+   > total cost:          0.135194887760987064 ETH
+
+   Pausing for 2 confirmations...
+
+   -------------------------------
+   > confirmation number: 1 (block: 4456135)
+   > confirmation number: 2 (block: 4456136)
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.135194887760987064 ETH
+   
+
+
+2_data_feed_migration.js (MUMBAI_AGGREGATOR_BTCUSD)
+LINK TOKEN 0x326C977E6efc84E512bB9C30f76E30c160eD06FB
+========================
+networkId :80001
+aggregatorAddress: 0x007A22900a3B98143368Bd5906f8E17e9867581b
+
+   Deploying 'DataFeed'
+   --------------------
+   > transaction hash:    0x39ff97e264936a16eadf5d8aa51470418dfb67d30507a491bb2d976ba8afd50a
+   > Blocks: 3            Seconds: 4
+   > contract address:    0x2d8E6E8dDcA2bE593724705ce617AF077e6Bd450
+   > block number:        41007990
+   > block timestamp:     1696848673
+   > account:             0xa5bF3C96AA9816A1EB5Bd0e5D2561947293894B4
+   > balance:             2.225783963742113085
+   > gas used:            337296 (0x52590)
+   > gas price:           2.500000015 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00084324000505944 ETH
+
+   Pausing for 2 confirmations...
+
+   -------------------------------
+   > confirmation number: 2 (block: 41007993)
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00084324000505944 ETH
+
+
+
+2_data_feed_migration.js (ARB_TEST_GOERLI_AGGREGATOR_BTCUSD)
+LINK TOKEN 0xd14838a68e8afbade5efb411d5871ea0011afd28
+========================
+networkId :421613
+aggregatorAddress: 0x6550bc2301936011c1334555e62A87705A81C12C
+
+   Deploying 'DataFeed'
+   --------------------
+   > transaction hash:    0xbbbf51780117d4aabdeeef8da1195a66353dd1b2da3cb153279912a3aaab3661
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xd35e24d482Ba7AeCF1C65785874074AdCFaECed5
+   > block number:        46508227
+   > block timestamp:     1696848860
+   > account:             0xa5bF3C96AA9816A1EB5Bd0e5D2561947293894B4
+   > balance:             0.0249041745
+   > gas used:            337308 (0x5259c)
+   > gas price:           2.6 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0008770008 ETH
+
+   Pausing for 2 confirmations...
+
+   -------------------------------
+   > confirmation number: 18 (block: 46508253)
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:        0.0008770008 ETH
