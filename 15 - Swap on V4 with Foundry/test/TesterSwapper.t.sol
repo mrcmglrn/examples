@@ -36,17 +36,17 @@ contract TesterSwapper is Test {
 
   // Happy path: User swap ETH for PersonalToken
   function test_SwapETHtoPersonalToken() public {
-    // TO DO: Happy path: User swap ETH for PersonalToken
+    // TODO: Happy path: User swap ETH for PersonalToken
   }
 
   // Unhappy path: User's swap fails because minAmountOut is too high
   function test_RefundIf_SwapOutputTooLow() public {
-    // TO DO: Unhappy path: User's swap fails because minAmountOut is too high
+    // TODO: Unhappy path: User's swap fails because minAmountOut is too high
   }
 
   // Unhappy path: User's swap fails due to insufficient ETH
   function test_RevertIf_InsufficientETH() public {
-    // TO DO: Unhappy path: User's swap fails due to insufficient ETH
+    // TODO: Unhappy path: User's swap fails due to insufficient ETH
   }
 
   // Happy path: User swap PersonalToken for ETH

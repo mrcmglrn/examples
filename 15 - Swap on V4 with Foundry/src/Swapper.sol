@@ -85,7 +85,7 @@ contract Swapper {
     uint128 minAmountOut,
     uint48 permitExpiration
   ) external returns (uint256 amountOut) {
-    // TO DO: Implement swapPersonalTokenForETH
+    // TODO: Implement swapPersonalTokenForETH
   }
 
   function withdraw(address token) external onlyOwner {
