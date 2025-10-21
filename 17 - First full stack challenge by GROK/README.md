@@ -1,4 +1,4 @@
-# Task 1: Simple ERC20 Token Deployment (2/4 hours)
+# Task 1: Simple ERC20 Token Deployment (4 hours)
 
 ## Description:
 
