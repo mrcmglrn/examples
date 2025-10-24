@@ -25,5 +25,5 @@ router.put('/withdraw', myCollectionController.withdraw);
 router.post('/transfer-ownership', myCollectionController.transferOwnership);
 
 export default function myCollectionRoute(app) {
-  app.use('/api/my-collection', router);
+  app.use('/api', router);
 }

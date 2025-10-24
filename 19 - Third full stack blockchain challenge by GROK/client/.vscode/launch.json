@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "firefox",
+      "request": "launch",
+      "name": "Debug React (CRA)",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}",
+      "pathMappings": [
+        {
+          "url": "file:///C:/Users/marco/Desktop/omof/CODE%2520GITHUB%2520PUBLIC/19%2520-%2520Third%2520full%2520stack%2520blockchain%2520challenge%2520by%2520GROK",
+          "path": "c:/Users/marco/Desktop/omof/CODE GITHUB PUBLIC/19 - Third full stack blockchain challenge by GROK"
+        },
+        {
+          "url": "webpack:///./src",
+          "path": "${workspaceFolder}/src"
+        },
+        {
+          "url": "webpack:///src",
+          "path": "${workspaceFolder}/src"
+        }
+      ],
+      "firefoxExecutable": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "profile": "default-release",
+      "keepProfileChanges": false,
+      "timeout": 60000,
+      "trace": "verbose",
+      "sourceMaps": true,
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ],
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ]
+    }
+  ]
+}
