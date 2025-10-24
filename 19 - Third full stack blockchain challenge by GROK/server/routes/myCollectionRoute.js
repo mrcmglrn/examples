@@ -3,6 +3,9 @@ import * as myCollectionController from '../controllers/myCollectionController.j
 
 const router = express.Router();
 
+router.get('/contract-address', myCollectionController.getContractAddress);
+router.get('/contract-abi', myCollectionController.getContractABI);
+
 router.post('/token-uri', myCollectionController.getTokenURI);
 router.put('/base-uri', myCollectionController.setBaseTokenURI);
 

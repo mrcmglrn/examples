@@ -3,13 +3,32 @@
  * the blockchain, everything can be done from the frontend using Metamask.
  * However, if you want to interact with the smart contract from server side, you can use the code below.
  */
-import {
-  myCollectionProvider,
-  myCollectionReadContract,
-  myCollectionWriteContract,
-} from "../utils/myCollectionInstance.js";
+import { myCollectionProvider, myCollectionReadContract, myCollectionWriteContract } from "../utils/myCollectionInstance.js";
+
+import _contractAddress from '../contracts/MyCollectionAddress.js';
+import _contractABI from '../contracts/MyCollectionABI.js';
 
 import { ethers } from "ethers";
+
+export function getContractAddress(req, res) {
+  try {
+    const contractAddress = _contractAddress;
+    return res.status(200).json({ message: "Contract address", value: contractAddress });
+  } catch (err) {
+    console.error("getContractAddress error", err);
+    return res.status(500).json({ error: err.message || String(err) });
+  }
+}
+
+export  function getContractABI(req, res) {
+  try {
+    const contractABI = _contractABI;
+    return res.status(200).json({ message: "Contract ABI", value: contractABI });
+  } catch (err) {
+    console.error("getContractABI error", err);
+    return res.status(500).json({ error: err.message || String(err) });
+  }
+}
 
 export async function getTokenURI(req, res) {
   const { id } = req.body;
