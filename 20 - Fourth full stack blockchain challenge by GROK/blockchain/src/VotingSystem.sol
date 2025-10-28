@@ -51,7 +51,7 @@ contract VotingSystem is Ownable {
         require(p.deadline < block.timestamp, "It's too early for result!");
 
         bool result; // Default false
-        if (p.favorables >= p.quorum  && p.favorables > p.contraries) {
+        if (p.favorables >= p.quorum && p.favorables > p.contraries) {
             result = true;
         }
 
