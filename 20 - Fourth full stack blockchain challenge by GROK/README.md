@@ -2,9 +2,9 @@
 
 ## Description: 
 
-  - Develop a Solidity contract for a voting system where users can vote for candidates.
+  - Develop a Solidity contract for a voting system where users can vote for proposals.
   - Build an Express API to interact with the contract.
-  - Adding a React frontend to display candidates.
+  - Adding a React frontend to display proposals.
   - Allow voting via MetaMask.
 
 ## Skills Tested:
@@ -20,7 +20,7 @@
   1. Solidity contract with vote and getResults functions.
   2. Deployed contract on a testnet.
   3. Express API to vote and fetch results.
-  4. React frontend showing candidates, vote button, and results.
+  4. React frontend showing proposals, vote button, and results.
   5. Git repository.
 
 ## Steps:
