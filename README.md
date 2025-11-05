@@ -1,54 +1,89 @@
-# Info generali sui progetti
+# General info about the projects
 
-## 1 - Frontend sito personale
+## 1 - Personal website frontend  
+This is the frontend of my personal website, made with React.js. You can see the code, but if you run it, it won’t work because the backend and database are missing.  
+The full site uses the **MERN stack** (MongoDB, Express, React, Node.js), it’s live on Render, and you can visit it at:  
+**www.marcomigliorini.com**
 
-È il frontend in React.js del mio sito. Puoi vedere il codice ma mancando backend e database se lo esegui non va.
-Comunque il sito è fatto con stack MERN, deployato su render, raggiungibile all'indirizzo www.marcomigliorini.com
+## 2 - Metamask test  
+A very simple frontend to force MetaMask to use only certain blockchain networks (a subset of chains).
 
-## 2 - Metamask test
+## 3 - Smart Contract NFT minting collection  
+Two smart contracts:  
+- One **ERC721** written from scratch (by hand)  
+- One **ERC1155** made with **OpenZeppelin**  
+You can deploy them on **Mumbai testnet** and find them on **OpenSea**.
 
-È un frontend minimale per forzare metamask a utilizzare un sottoinsieme di chain.
+## 4 - Frontend NFT collection (run after project 3)  
+A basic frontend to view the NFTs deployed on Mumbai. It’s simple but it works.
 
-## 3 - Smart Contract NFT minting collection
+## 5 - Smart Contract multisig wallet  
+Two smart contracts for a **multisig wallet (MxN)**:  
+- One simple version  
+- One more advanced
 
-Sono due Smart Contract, ERC721 fatto "a mano" e ERC1155 facco con "OpenZeppelin", di cui si può eseguire il deploy su Mumbai, e ricercarli su OpenSea.
+## 6 - Smart Contract DEX  
+This is the DEX smart contract I told you about in the interview.  
+It was written for **Solidity 0.6.3**, so it still uses **SafeMath.sol** for math operations.
 
-## 4 - Frontend NFT collection (execute after 3)
+## 7 - Tests for the DEX smart contract  
+Tests for the DEX contract, written with **Truffle**.
 
-È un frontend di prova per visualizzare gli NFT deployati su Mumbai. E' basilare ma funziona.
+## 8 - dApp game  
+A **Rock-Paper-Scissors** game built as a dApp (decentralized app).
 
-## 5 - Smart Contract wallet multisig
+## 9 - Challenge  
+Exploit of a smart contract deployed on Mumbai.
 
-Sono due Smart COontract per un wallet multisig MxN, uno semplice e l'altro un po' più articolato.
+### "Attacker.sol" contract address  
+The address of the **Attacker.sol** contract on Mumbai is:  
+**0x1B8D0E15cd04d4A678cBd50Ab0624f9BfdCcb4D4**
 
-## 6 - Smart Contract dex
+### Run `node index.js` to exploit the smart contract  
+In the terminal, run:  
+```bash
+node index.js
+```  
+This will attack the **InformationVault.sol** contract deployed at:  
+**0xe27AdBD639a6B4e5F04eC1C8C45F1C796F45c862**
 
-È lo Smart Contract del dex di cui vi parlavo al colloquio. Era scritto per Solidity v0.6.3 quindi utilizza ancora il contratto SafeMath.sol per la gestione dell'artitmetica.
+### ".env" file – change settings for the exploit  
+The `.env` file (included for simplicity) lets you change:  
+- `ATTACKER_PAYLOAD` → the data you want to write into the target contract’s storage  
+- `ATTACKER_METHOD_SIGNATURE` → the function to call using `delegateCall` to do the overwrite
 
-## 7 - Test Smart Contract dex
+### "AbiEncoder.sol" – helper contract to create exploit payload  
+The **AbiEncoder.sol** contract helps you create the correct payload for the function you want to call with `delegateCall`.
 
-È la parte di test, fatti tramite Truffle, per il precedente smart contract.
+## 10 - Chainlink oracle data feeds  
+A simple smart contract that reads **real-world data** (like prices) from **Chainlink oracles**. It shows how to get trusted data on-chain.
 
-## 8 - dApp game
+## 11 - Transparent proxy  
+An **upgradeable smart contract** using the **Transparent Proxy pattern** (from OpenZeppelin). The logic can be updated without changing the address.
 
-È il gioco carta/forbice/sasso fatti tipo dApp.
+## 12 - Simple eCommerce  
+A basic **online shop** on blockchain: users can buy products using crypto. Includes product list, cart, and payment.
 
-## 9 - Challenge
+## 13 - Stripe gateway integration  
+Connects a web app to **Stripe** for fiat payments (euro, dollar). Users pay with credit card, and the backend records the order.
 
-Exploit di smart contract deployato su Mumbai.
+## 14 - ERC20 with Foundry  
+An **ERC20 token** (custom coin) created and tested using **Foundry**. Includes mint, burn, transfer, and full tests.
 
-### "Attacker.sol" contract address
+## 15 - Swap on V4 with Foundry  
+A **token swap** (like Uniswap) using **Uniswap V4 hooks**, built and tested with **Foundry**. You can exchange two tokens.
 
-L'address dello smart contract Attacker.sol su Mumbai è: 0x1B8D0E15cd04d4A678cBd50Ab0624f9BfdCcb4D4.
+## 16 - Add liquidity on V4 with Foundry  
+Add **liquidity** to a Uniswap V4 pool using **Foundry**. Includes approval, deposit, and position management.
 
-### 'node index.js' to performe exploit of smart contract
+## 17 - First full stack blockchain challenge
+**Create and deploy a basic ERC20 token** on Sepolia testnet using Solidity and OpenZeppelin. Build an Express API to check token balance and display it on a React frontend. Full project with Git version control.
 
-Da cmd eseguendo il comando 'node index.js' si esegue l'exploit di "InformationVault.sol" deployato su Mumbai all'indirizzo 0xe27AdBD639a6B4e5F04eC1C8C45F1C796F45c862.
+## 18 - Second full stack blockchain challenge
+**React app that connects to MetaMask** and shows wallet address + ETH balance. Includes dropdown to switch between testnets (Sepolia, Goerli).  Clean code with Git commits.
 
-### ".env" contains the parameters to be set to run the exploit
+## 19 - Third full stack blockchain challenge
+**ERC721 contract to mint NFTs**, deployed on Sepolia. Express backend + React frontend with "Mint" button via MetaMask. Complete flow: deploy → API → mint.
 
-Nel file .env, versionato per semplicità, è possibile modificare i parametri: ATTACKER_PAYLOAD e ATTACKER_METHOD_SIGNATURE, per cambiare rispettivamente il payload con cui si vuole sovrascrivere lo STORAGE dello smart contract exploitato, e la funzione da richiamare per effettuare l'override stesso, tramite delegateCall.
-
-### "AbiEncoder.sol" utility smart contract to encode payload to execute exploit
-
-Lo smart "AbiEncoder.sol" può essere utilizzato per generare il payload d'interesse per la funzione che s'intende richiamare con la delegateCall.
+## 20 - Fourth full stack blockchain challenge 
+**Solidity contract for voting on proposals** (one vote per wallet). Express API + React UI to show proposals, vote, and see live results. Fully decentralized and versioned with Git.

@@ -1,5 +1,5 @@
 ##### sepolia
-✅  [Success] Hash: 0xfa9b07c8f33659132e7659d71a5373833157918ef9711d73f55bb7b7c92eb7c5
-Contract Address: 0x049016dbA37b330BbFF458eFDe71fd1a95aB65B6
-Block: 9503045
-Paid: 0.00000171564415627 ETH (1715627 gas * 0.00100001 gwei)
+✅  [Success] Hash: 0x244bf4651c73bb5730f2d5e6cfbe28df6b15ea747362fddd9be963f9a46a0c83
+Contract Address: 0x0ee2793E2888D5507C17a4969213617EDf9546FD                                                                          
+Block: 9566519
+Paid: 0.000001729284021915 ETH (1729265 gas * 0.001000011 gwei)

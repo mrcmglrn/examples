@@ -14,7 +14,7 @@ contract VotingSystem is Ownable {
     }
 
     // Storage
-    uint256 internal proposalCounter = 0; // It's possible use it to "iterate" the mapping poposals!
+    uint256 public proposalCounter = 0; // It's possible use it to "iterate" the mapping poposals!
     uint256 public activeVoters = 0;
     mapping(address => bool) public voters;
     mapping(uint256 => Proposal) public proposals;

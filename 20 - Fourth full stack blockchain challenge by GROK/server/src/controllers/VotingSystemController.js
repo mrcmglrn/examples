@@ -24,6 +24,16 @@ export function getContractAddress(req, res) {
   }
 }
 
+export async function getProposalCounter(req, res) {
+  try {
+    const proposalCounter = await votingSystemReadContract.proposalCounter();
+    return res.status(200).jsonBig(proposalCounter);
+  } catch (err) {
+    console.error("getProposalCounter error", err);
+    return res.status(500).json({ error: err.message || String(err) });
+  }
+}
+
 export async function getActiveVoters(req, res) {
   try {
     const activeVoters = await votingSystemReadContract.activeVoters();
@@ -34,7 +44,7 @@ export async function getActiveVoters(req, res) {
   }
 }
 
-export async function getVoters(req, res) {
+export async function getVoterByAddress(req, res) {
   const voter = req.params.voter;
   try {
     const voterStatus = await votingSystemReadContract.voters(voter);
@@ -45,7 +55,7 @@ export async function getVoters(req, res) {
   }
 }
 
-export async function getProposals(req, res) {
+export async function getProposalById(req, res) {
   const proposalId = req.params.proposalId;
   try {
     const proposalStatus = await votingSystemReadContract.proposals(proposalId);
@@ -64,17 +74,6 @@ export async function getResultVoting(req, res) {
     return res.status(200).jsonBig(receipt);
   } catch (err) {
     console.error("getResultVoting error", err);
-    return res.status(500).json({ error: err.message || String(err) });
-  }
-}
-
-export async function getProposal(req, res) {
-  const proposalId = req.params.proposalId;
-  try {
-    const proposalStatus = await votingSystemReadContract.getProposal(proposalId);
-    return res.status(200).jsonBig(proposalStatus);
-  } catch (err) {
-    console.error("getProposals error", err);
     return res.status(500).json({ error: err.message || String(err) });
   }
 }

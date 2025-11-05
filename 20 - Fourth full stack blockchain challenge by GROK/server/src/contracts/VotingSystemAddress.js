@@ -1,3 +1,3 @@
-const VotingSystemAddress = "0x049016dbA37b330BbFF458eFDe71fd1a95aB65B6";
+const VotingSystemAddress = "0x0ee2793E2888D5507C17a4969213617EDf9546FD";
 
 export default VotingSystemAddress;
