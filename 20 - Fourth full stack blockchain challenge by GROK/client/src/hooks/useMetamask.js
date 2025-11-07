@@ -4,6 +4,7 @@ import { ethers } from 'ethers';
 function useMetamask() {
   const [account, setAccount] = useState(null);
   const [provider, setProvider] = useState(null);
+  const [network, setNetwork] = useState(null);
   const [signer, setSigner] = useState(null);
 
   const connectWallet = async () => {
@@ -14,9 +15,11 @@ function useMetamask() {
     try {
       const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
       const prov = new ethers.BrowserProvider(window.ethereum);
+      const net = await prov.getNetwork();
       const sign = await prov.getSigner();
       setAccount(accounts[0]);
       setProvider(prov);
+      setNetwork(net.chainId.toString());
       setSigner(sign);
       console.log('Connected to MetaMask!');
     } catch (error) {
@@ -27,20 +30,24 @@ function useMetamask() {
   useEffect(() => {
     if (!provider || !account) return;
 
-    const handleAccountsChanged = (accounts) => {
+    const handleAccountsChanged = async (accounts) => {
       if (accounts.length === 0) {
         setAccount(null);
         setSigner(null);
+        setNetwork(null);
       } else {
         setAccount(accounts[0]);
         provider.getSigner().then(setSigner);
       }
     };
 
-    const handleChainChanged = () => {
+    const handleChainChanged = async () => {
       const prov = new ethers.BrowserProvider(window.ethereum);
+      const net = await prov.getNetwork();
+      const sign = await prov.getSigner();
       setProvider(prov);
-      prov.getSigner().then(setSigner);
+      setNetwork(net.chainId.toString());
+      setSigner(sign);
     };
 
     window.ethereum?.on?.('accountsChanged', handleAccountsChanged);
@@ -56,7 +63,7 @@ function useMetamask() {
     };
   }, [provider, account]);
 
-  return { account, provider, signer, connectWallet };
+  return { account, provider, network, signer, connectWallet };
 }
 
 export default useMetamask;

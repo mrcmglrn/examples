@@ -2,8 +2,7 @@
 
 ## 1 - Personal website frontend  
 This is the frontend of my personal website, made with React.js. You can see the code, but if you run it, it won’t work because the backend and database are missing.  
-The full site uses the **MERN stack** (MongoDB, Express, React, Node.js), it’s live on Render, and you can visit it at:  
-**www.marcomigliorini.com**
+The full site uses the **MERN stack** (MongoDB, Express, React, Node.js), it’s live on Render, and you can visit it at: **www.marcomigliorini.com**
 
 ## 2 - Metamask test  
 A very simple frontend to force MetaMask to use only certain blockchain networks (a subset of chains).

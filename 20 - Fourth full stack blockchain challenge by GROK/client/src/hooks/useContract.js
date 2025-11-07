@@ -13,8 +13,8 @@ function useContract(provider, account) {
         const signer = await provider.getSigner();
         const addressResponse = await VotingSystemDataService.getVotingSystemAddress();
         const abiResponse = await VotingSystemDataService.getVotingSystemABI();
-        const contractAddress = addressResponse.data.value;
-        const contractABI = abiResponse.data.value;
+        const contractAddress = addressResponse.data;
+        const contractABI = abiResponse.data;
 
         const contractInstance = new ethers.Contract(contractAddress, contractABI, signer);
         setContract(contractInstance);

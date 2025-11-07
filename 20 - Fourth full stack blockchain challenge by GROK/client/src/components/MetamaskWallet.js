@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useMetamask from '../hooks/useMetamask';
 import useContract from '../hooks/useContract';
 import { callRead, sendWrite } from '../utils/contractActions';
 
-function MetamaskWallet() {
+function MetamaskWallet({ children }) {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const { account, provider, connectWallet } = useMetamask();
+  const { account, provider, network, connectWallet } = useMetamask();
   const { contract } = useContract(provider, account);
 
   const handleRead = async (functionName, ...args) => {
@@ -60,12 +60,25 @@ function MetamaskWallet() {
         {account ? `Connected: ${account.slice(0, 6)}...${account.slice(-4)}` : 'Connect Wallet'}
       </button>
 
-      {account && contract && (
+      {account && (
         <div style={{ marginTop: 12 }}>
           <div><strong>Address:</strong> {account}</div>
+          <div><strong>Network:</strong> {network}</div>
 
-          {loading && <p>Transaction in progress...</p>}
-          {error && <div style={{ marginTop: 12, color: 'red' }}><strong>Error:</strong> {error}</div>}
+          {contract ? (
+            <>
+              {children({ handleRead, handleWrite })}
+
+              {loading && <p>Transaction in progress...</p>}
+              {error && (
+                <div style={{ marginTop: 12, color: 'red' }}>
+                  <strong>Error:</strong> {error}
+                </div>
+              )}
+            </>
+          ) : (
+            <p>Loading contract...</p>
+          )}
         </div>
       )}
     </div>

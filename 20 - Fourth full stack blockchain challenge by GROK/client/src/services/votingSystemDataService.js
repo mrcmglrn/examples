@@ -1,6 +1,7 @@
 import http from "./httpCommon.js";
 
 class VotingSystemDataService {
+  
   getVotingSystemAddress() {
     return http.get('/contract-address');
   }
